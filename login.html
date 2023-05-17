@@ -15,7 +15,7 @@
 		<title>Bootstrap demo</title>
 	</head>	
 	<body>
-        <body class="text-center">
+        <body class="text-center" onload="init();">
             <br><br><br>
             <div class="mx-auto" style="width: 500px; text-align: center" >
                 <a href="index.html" target="_blank"><img src="img/googlelogo.png" class="img-fluid" alt="구글이미지"></a>
@@ -34,12 +34,12 @@
         
                 <div class="checkbox mb-3">
                   <label>
-                    <input type="checkbox" value="remember-me"> 아이디 기억
+                    <input type="checkbox" value="remember-me" id="idSaveCheck"> 아이디 기억
                   </label>
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" onclick="login()" type="button">로그인하기</button>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-                  
+              </form>
                 <!-- 
                   <div class="text-center">
                     <p>Not a member? <a href="#!">Register</a></p>
@@ -61,7 +61,7 @@
                     </button>
                   </div>
                 -->  
-              </form>
+              
             </main>
             <footer class="bg-light text-center text-lg-start">
                 <div class="text-center p-3" style="background-color:#D8D8D8;">
