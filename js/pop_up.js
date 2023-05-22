@@ -28,23 +28,21 @@ function show_clock(){
     setTimeout(show_clock, 1000);  //1초마다 갱신
 }
 
-function setCookie(name, value, expiredays) {
-  var date = new Date();
-  date.setDate(date.getDate() + expiredays);
-  document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "SameSite=None; Secure"; 
+function setCookie(name, value, expiredays) { // 쿠키를 SET하는 함수
+  var date = new Date(); //현재 시간 기준 - date
+  date.setDate(date.getDate() + expiredays); // expiredays 시간 설정 추가 , getDate함수는 UTC표준 날짜 리턴
+  document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "SameSite=None; Secure"; // 보안 관련코드 
 }
 
-
-function getCookie(name) {
+function getCookie(name) { // 쿠키를 GET하는 함수
   var cookie = document.cookie;
   console.log("쿠키를 요청합니다.");
-  if (cookie != "") {
+  if (cookie != "") { //쿠키를 얻는다 존재하면 
       var cookie_array = cookie.split("; ");
-      for ( var index in cookie_array) {
-          var cookie_name = cookie_array[index].split("=");
-          
+      for ( var index in cookie_array) { 
+          var cookie_name = cookie_array[index].split("="); // 배열 반복하여 내부에 =을 제외한 popupYN을 찾아 값을 리턴
           if (cookie_name[0] == "popupYN") {
-              return cookie_name[1];
+              return cookie_name[1]; // 참고 : 쿠키는 키, 값으로 이루어짐 즉 값은 인덱스[1]이 된다.
           }
       }
   }
