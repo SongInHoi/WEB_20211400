@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 		<script type="text/javascript" src="js/array_test.js" defer></script>
 		<script type="text/javascript" src="js/pop_up.js" defer></script>
+		<script type="text/javascript" src="js/search.js" defer></script>
+		<script type="text/javascript" src="js/hover.js" defer></script>
 		<title>Bootstrap demo</title>
 	</head>	
 	<body onload="pop_up();">
@@ -53,6 +55,7 @@
 				</div>
 		  </div>
 		</nav>
+		
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 			<div class="container-fluid">
 			<a class="navbar-brand" href="#">하단메뉴</a>
@@ -67,16 +70,18 @@
 				</ul>
 			</div>
 			</div>
-		</nav>		
+		</nav>	
+		<br>
+		<br>
 		
-		<div class="mx-auto" style="width: 500px; text-align: center" >
-			<a href="index.html" target="_blank"><img src="img/googlelogo.png" class="img-fluid" alt="구글이미지"></a>
+		<div class="mx-auto" style="width: 500px; height: 150px; text-align: center" >
+			<a href="index.html" target="_blank"><img src="img/googlelogo.png" class="img-fluid" alt="구글이미지" onmouseover="over(this)" onmouseout="out(this)"></a>
 		</div>
 
-		<form action="https://www.google.co.kr/search" method="GET" target="_blank">
+		<form id="form_main" action="https://www.google.co.kr/search" method="GET" target="_blank" onsubmit="return false">
             <div class="d-flex justify-content-center">
                 <mx-auto>
-                    <input name="query" type="text" class="form-control-lg" placeholder="검색어 입력" aria-label="search" aria-describedby="search_btn">
+                    <input id="search_txt" name="query" type="text" class="form-control-lg" placeholder="검색어 입력" aria-label="search" aria-describedby="search_btn">
                 </mx-auto>
                 <button class="btn btn-success" type="submit" id="search_btn">검색</button>
            </div>	
@@ -120,7 +125,7 @@
 			</table> 
 		</div>
 		
-		<footer class="bg-light text-center text-lg-start">
+		<footer class="bg-light text-center text-lg-start" style="margin-top: 195px;">
   			<div class="text-center p-3" style="background-color:#D8D8D8;">
     			<h3 class="text-secondary">FOOTER TEST</h3>
     			<a class="text-dark" href="https://꾸글.com/">꾸글.com</a>
